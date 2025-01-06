@@ -63,7 +63,7 @@ int main(int argc, char *argv[])
       printf("Cerrando conexion con servidor...\n");
       break;
     }
-       if (strncmp(comando, "crear", 6) == 0) { // Si el comando comienza con "crear"
+       if (strncmp(comando, "create", 6) == 0) { // Si el comando comienza con "crear"
     char *filename = strchr(comando, ' ');
       if (filename != NULL) {
         filename++; // Avanzar al nombre del archivo después del espacio
@@ -93,7 +93,7 @@ int main(int argc, char *argv[])
         }
       }
     }
-    if (strncmp(comando, "borrar", 6) == 0) { // Si el comando comienza con "borrar"
+    if (strncmp(comando, "delete", 6) == 0) { // Si el comando comienza con "borrar"
     char *filename = strchr(comando, ' ');
       if (filename != NULL) {
         filename++; // Avanzar al nombre del archivo después del espacio
