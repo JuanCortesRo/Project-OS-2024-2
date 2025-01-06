@@ -67,6 +67,7 @@ int main()
             }
         }
     }
+    continue;
   }   
      if (strncmp(command, "delete", 4) == 0) {
             char *filename = strchr(command, ' ');
@@ -84,6 +85,7 @@ int main()
                     }
                }
             }
+      continue;
     }
     pid_t pid = fork();
 
