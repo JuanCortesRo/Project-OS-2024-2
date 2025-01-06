@@ -45,7 +45,7 @@ int main()
       TCP_Write_String(clientSocket, ANSI_COLOR_GREEN "Cerrando conexion..." ANSI_COLOR_RESET);
       break;
     }
-    if (strncmp(command, "crear", 6) == 0) {
+    if (strncmp(command, "create", 6) == 0) {
       char *filename = strchr(command,' ');
     if (filename != NULL) {
         filename++; // Avanzar al siguiente carácter después del espacio
@@ -68,7 +68,7 @@ int main()
         }
     }
   }   
-     if (strncmp(command, "borrar", 4) == 0) {
+     if (strncmp(command, "delete", 4) == 0) {
             char *filename = strchr(command, ' ');
             if (filename != NULL) {
                 filename++; // Avanzar al siguiente carácter después del espacio
