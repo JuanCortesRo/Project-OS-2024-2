@@ -63,6 +63,12 @@ int main(int argc, char *argv[])
       printf("Cerrando conexion con servidor...\n");
       break;
     }
+
+    if (strcmp(comando, "help") == 0) //Comando para salir del servidor
+    {
+      printf("%s%sls: Ver la lista de archivos.\n%screate %s<nombre_archivo>: Crea un nuevo archivo.\n%sdelete %s<nombre_archivo>:Borra un archivo.\n%ssalida: Cierra la conexión con el servidor (se acaba todo pues).%s\n",ANSI_COLOR_CYAN, ANSI_COLOR_RED, ANSI_COLOR_RED, ANSI_COLOR_RED, ANSI_COLOR_RED, ANSI_COLOR_RED, ANSI_COLOR_RED, ANSI_COLOR_RESET);
+      continue;
+    }
        if (strncmp(comando, "create", 6) == 0) { // Si el comando comienza con "crear"
     char *filename = strchr(comando, ' ');
       if (filename != NULL) {
