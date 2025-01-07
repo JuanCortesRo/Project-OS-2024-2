@@ -102,6 +102,7 @@ int main()
       execlp("/bin/sh", "/bin/sh", "-c", command, NULL);
       perror("Error al ejecutar el comando en el SERVIDOR");
       exit(1);
+      continue;
     }else if (pid > 0) {
     // Padre: esperar que el proceso hijo termine antes de continuar
     int status;
@@ -114,10 +115,12 @@ int main()
         // Comando finalizado con errores, enviar mensaje de error al cliente
         TCP_Write_String(clientSocket, ANSI_COLOR_RED "Error al ejecutar el comando." ANSI_COLOR_RESET);
        }
+      continue;
     }  else
     {
       // Ocurrió un error al intentar crear el proceso hijo
       TCP_Write_String(clientSocket, ANSI_COLOR_RED "Error al ejecutar el comando." ANSI_COLOR_RESET);
+      continue;
     }
     TCP_Write_String(clientSocket, "$");
     bzero(command, BUFSIZ);
