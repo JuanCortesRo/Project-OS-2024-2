@@ -69,7 +69,7 @@ int main(int argc, char *argv[])
         filename++; // Avanzar al nombre del archivo después del espacio
 
         // Enviar el nombre del archivo al servidor
-        TCP_Write_String(clientSocket, filename);
+        //TCP_Write_String(clientSocket, filename);
         printf("Crear archivo: %s\n", filename);
 
         char response[MAX_RESPONSE_LENGTH];
