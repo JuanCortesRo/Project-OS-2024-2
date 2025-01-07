@@ -53,7 +53,7 @@ int main(int argc, char *argv[])
     char comando[MAX_COMMAND_LENGTH];
     bzero(comando, MAX_COMMAND_LENGTH);
 
-    printf("%sDigite su comando. %sEscriba '%ssalida%s' para salir):> %s", ANSI_COLOR_BLUE,ANSI_COLOR_CYAN, ANSI_COLOR_RED, ANSI_COLOR_CYAN, ANSI_COLOR_RESET);
+    printf("%sDigite su comando. %sEscriba '%shelp%s' para ver los comandos):> %s", ANSI_COLOR_BLUE,ANSI_COLOR_CYAN, ANSI_COLOR_RED, ANSI_COLOR_CYAN, ANSI_COLOR_RESET);
     leer_de_teclado(MAX_COMMAND_LENGTH, comando);
 
     TCP_Write_String(clientSocket, comando);
@@ -66,7 +66,7 @@ int main(int argc, char *argv[])
 
     if (strcmp(comando, "help") == 0) //Comando para salir del servidor
     {
-      printf("%s%sls: Ver la lista de archivos.\n%screate %s<nombre_archivo>: Crea un nuevo archivo.\n%sdelete %s<nombre_archivo>:Borra un archivo.\n%ssalida: Cierra la conexión con el servidor (se acaba todo pues).%s\n",ANSI_COLOR_CYAN, ANSI_COLOR_RED, ANSI_COLOR_RED, ANSI_COLOR_RED, ANSI_COLOR_RED, ANSI_COLOR_RED, ANSI_COLOR_RED, ANSI_COLOR_RESET);
+      printf("%sls: %sVer la lista de archivos.\n%screate <nombre_archivo>: %sCrea un nuevo archivo.\n%sdelete <nombre_archivo>: %sBorra un archivo.\n%ssalida: %sCierra la conexión con el servidor (se acaba todo pues).%s\n",ANSI_COLOR_RED, ANSI_COLOR_CYAN, ANSI_COLOR_RED, ANSI_COLOR_CYAN, ANSI_COLOR_RED, ANSI_COLOR_CYAN, ANSI_COLOR_RED, ANSI_COLOR_CYAN, ANSI_COLOR_RESET);
       continue;
     }
        if (strncmp(comando, "create", 6) == 0) { // Si el comando comienza con "crear"
